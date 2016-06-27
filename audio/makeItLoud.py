@@ -27,3 +27,5 @@ for i in range(source.getnframes()):
     result.writeframes(frame)
 #закрываем файл
 result.close()
+
+#github.com/roctbb/goto/
