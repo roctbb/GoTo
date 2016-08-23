@@ -75,6 +75,7 @@ def make_testing():
                 module = __import__(player, fromlist=["make_choice"])
                 module = imp.reload(module)
                 makeChoice = getattr(module, "make_choice")
+                print(healthMap)
                 choices[player] = makeChoice(int(coords[player]["x"]), int(coords[player]["y"]), healthMap); #тут выбор
             except Exception:
                 print(player+" has crashed :(")
@@ -83,26 +84,34 @@ def make_testing():
             if choices[player]=="go_up":
                 if int(coords[player]["y"]) > 0 and mainMap[coords[player]["x"]][coords[player]["y"] - 1] == '.':
                     mainMap[coords[player]["x"]][coords[player]["y"]] = '.'
+                    healthMap[coords[player]["x"]][coords[player]["y"]] = 0
                     coords[player]["y"] -= 1
                     mainMap[coords[player]["x"]][coords[player]["y"]] = player
+                    healthMap[coords[player]["x"]][coords[player]["y"]] = health[player]
                     c.execute("UPDATE game SET y = " + str(coords[player]["y"]) + " WHERE key = ?", [player])
             if choices[player] == "go_down":
                 if int(coords[player]["y"]) < int(settings["height"]) - 1 and mainMap[coords[player]["x"]][coords[player]["y"]+1] == '.':
                     mainMap[coords[player]["x"]][coords[player]["y"]] = '.'
+                    healthMap[coords[player]["x"]][coords[player]["y"]] = 0
                     coords[player]["y"] += 1
                     mainMap[coords[player]["x"]][coords[player]["y"]] = player
+                    healthMap[coords[player]["x"]][coords[player]["y"]] = health[player]
                     c.execute("UPDATE game SET y = " + str(coords[player]["y"]) + " WHERE key = ?", [player])
             if choices[player] == "go_left":
                 if int(coords[player]["x"]) > 0 and mainMap[int(coords[player]["x"]) -1][coords[player]["y"]] == '.':
                     mainMap[coords[player]["x"]][coords[player]["y"]] = '.'
+                    healthMap[coords[player]["x"]][coords[player]["y"]] = 0
                     coords[player]["x"] -= 1
                     mainMap[coords[player]["x"]][coords[player]["y"]] = player
+                    healthMap[coords[player]["x"]][coords[player]["y"]] = health[player]
                     c.execute("UPDATE game SET x = " + str(coords[player]["x"]) + " WHERE key = ?", [player])
             if choices[player] == "go_right":
                 if int(coords[player]["x"]) < int(settings["width"]) - 1 and mainMap[int(coords[player]["x"])+1][coords[player]["y"]] == '.':
                     mainMap[coords[player]["x"]][coords[player]["y"]] = '.'
+                    healthMap[coords[player]["x"]][coords[player]["y"]] = 0
                     coords[player]["x"]+=1
                     mainMap[coords[player]["x"]][coords[player]["y"]] = player
+                    healthMap[coords[player]["x"]][coords[player]["y"]] = health[player]
                     c.execute("UPDATE game SET x = " + str(coords[player]["x"]) + " WHERE key = ?", [player])
             if choices[player]=="go_up" or choices[player] == "go_down" or choices[player] == "go_left" or choices[player] == "go_right" or  choices[player] == "fire_up" or choices[player] == "fire_down" or choices[player] == "fire_left" or choices[player] == "fire_right" or choices[player] == "crash":
                 c.execute("INSERT INTO actions (key, value) VALUES (?, ?)", [player, choices[player]])
