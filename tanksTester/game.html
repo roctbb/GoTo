@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <style>
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            table-layout: fixed;
+            width: 100%;
+        }
+        p {
+            margin: 0 !important;
+        }
+        body {
+            background-image: url(static/bg.jpg);
+            background-repeat: repeat;
+        }
+        td {
+            color: white;
+        }
+        .player
+        {
+            background-image: url(static/player.png);
+            background-size: cover;
+        }
+        .vertical
+        {
+            background-image: url(static/vertical.png);
+            background-size: contain;
+            background-position: center;
+        }
+        .horizontal
+        {
+            background-image: url(static/horizontal.png);
+            background-size: contain;
+            background-position: center;
+        }
+    </style>
+    <script>
+    var timerId = setInterval(function() {
+        $.ajax({
+          url: "/state",
+          success: function(data){
+            result = JSON.parse(data);
+            result.forEach(function(line, i, arr) {
+                line.forEach(function(item, j, arr1) {
+                    if (item!='.' && item!='&uarr;' && item!='&larr;' && item!='&rarr;' && item!='&darr;')
+                    {
+                        $('#'+j+'_'+i).addClass("player");
+                        $('#'+j+"_"+i).removeClass("vertical horizontal");
+                        if (item['hit']==1)
+                        {
+                            alert
+                            $('#'+j+'_'+i).html("<span style='color:red;'>"+item['life']+"</span><br><p style='font-size: 6px; line-height: 6px;'>"+item['name'].replace(" ", "<br/>")+'</p>');
+                        }
+                        else
+                        {
+                            $('#'+j+'_'+i).html(item['life']+"<br><p style='font-size: 6px; line-height: 6px;'>"+item['name'].replace(" ", "<br/>")+'</p>');
+                        }
+
+                    }
+                    else
+                    {
+                        $('#'+j+"_"+i).removeClass("player vertical horizontal");
+                        if (item=='.')
+                        {
+
+                            $('#'+j+'_'+i).html("&nbsp;");
+                        }
+                        if (item=='&larr;' || item=='&rarr;')
+                        {
+                            $('#'+j+'_'+i).addClass("horizontal");
+                            $('#'+j+'_'+i).html("&nbsp");
+                        }
+                        if (item=='&uarr;' || item=='&darr;')
+                        {
+                            $('#'+j+'_'+i).addClass("vertical");
+                            $('#'+j+'_'+i).html("&nbsp;");
+                        }
+                    }
+                });
+            });
+          }
+        });
+    }, 600);
+
+
+
+    </script>
+
+</head>
+<body style="height: 100%;">
+    <table cellspacing="0" style="min-width:100%; min-height: 100%;">
+    {% for x in range(int(height)) %}
+        <tr>
+         {% for y in range(int(width)) %}
+            <td  class="text-center" id="{{ x }}_{{ y }}">.</td>
+         {% end %}
+        </tr>
+    {% end %}
+    </table>
+</body>
+</html>
