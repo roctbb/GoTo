@@ -6,9 +6,19 @@ import os
 import importlib as imp
 
 def make_testing():
+    folder = './bots'
+    for the_file in os.listdir(folder):
+        file_path = os.path.join(folder, the_file)
+
+        try:
+            if os.path.isfile(file_path) and file_path.find(".m")!=-1:
+                print(the_file)
+                os.unlink(file_path)
+        except Exception as e:
+            print(e)
     conn = sqlite3.connect('tanks.sqlite')
     c = conn.cursor()
-    sys.path.append(os.path.dirname(__file__) + "/bots")
+
     #get settings
     c.execute("SELECT * FROM settings")
     result = c.fetchall()
@@ -18,13 +28,17 @@ def make_testing():
     print(settings)
     #get bots
     #change to in game
-    c.execute("SELECT key FROM players WHERE state = 'ready'")
+    names = dict()
+    c.execute("SELECT key, name FROM players WHERE state = 'ready'")
     result = c.fetchall()
     players = list()
-    bots = dict()
+    print("CURRENT PLAYERS:")
     for string in result:
+        print(string[0]+" - "+string[1])
         players.append(string[0])
-
+        names[string[0]]=string[1]
+    print("")
+    print("")
 
     #clear current state
     c.execute("DELETE FROM statistics")
@@ -37,13 +51,23 @@ def make_testing():
 
     coords = dict()
     health = dict()
+    errors = dict()
+    crashes = dict()
     lifeplayers = len(players)
     kills = dict()
     ticks = 0;
+    steps = dict()
+    shots = dict()
+    banlist = list()
+
 
 
     for player in players:
         coords[player] = dict()
+        steps[player] = 0
+        errors[player] = 0
+        crashes[player] = 0
+        shots[player] = 0
         health[player] = int(settings["max_health"])
         kills[player] = 0
         x = random.randint(0, int(settings["width"])-1)
@@ -61,11 +85,17 @@ def make_testing():
 
     conn.commit()
 
-
+    sys.path.append(os.path.dirname(__file__) + "/bots")
     while lifeplayers>int(settings['game_stop']):
+        if int(settings['stop_ticks'])!=0 and ticks>int(settings['stop_ticks']):
+            break
+        print("current tick:"+str(ticks))
         choices = dict()
         ticks += 1
         for player in players:
+            choices[player] = ""
+            if player in banlist:
+                continue
             try:
                 c.execute("SELECT code FROM players WHERE key = ?", [player])
                 code = c.fetchone()
@@ -75,13 +105,23 @@ def make_testing():
                 module = __import__(player, fromlist=["make_choice"])
                 module = imp.reload(module)
                 makeChoice = getattr(module, "make_choice")
-                print(healthMap)
+                #print("Now running:" +player+" ("+names[player]+")")
                 choices[player] = makeChoice(int(coords[player]["x"]), int(coords[player]["y"]), healthMap); #тут выбор
-            except Exception:
-                print(player+" has crashed :(")
+            except Exception as e:
+                print(player+" ("+names[player]+") has crashed :( :"+str(e))
                 choices[player] = "crash"
+                crashes[player]+=1
+                c.execute("INSERT INTO actions (key, value) VALUES (?, ?)", [player, choices[player]])
+                c.execute(
+                    "UPDATE statistics SET crashes = " + str(crashes[player]) + " WHERE key = ?",
+                    [player])
+        conn.commit()
+        #print(healthMap)
         for player in players:
+            if player in banlist:
+                continue
             if choices[player]=="go_up":
+                steps[player]+=1
                 if int(coords[player]["y"]) > 0 and mainMap[coords[player]["x"]][coords[player]["y"] - 1] == '.':
                     mainMap[coords[player]["x"]][coords[player]["y"]] = '.'
                     healthMap[coords[player]["x"]][coords[player]["y"]] = 0
@@ -90,6 +130,7 @@ def make_testing():
                     healthMap[coords[player]["x"]][coords[player]["y"]] = health[player]
                     c.execute("UPDATE game SET y = " + str(coords[player]["y"]) + " WHERE key = ?", [player])
             if choices[player] == "go_down":
+                steps[player] += 1
                 if int(coords[player]["y"]) < int(settings["height"]) - 1 and mainMap[coords[player]["x"]][coords[player]["y"]+1] == '.':
                     mainMap[coords[player]["x"]][coords[player]["y"]] = '.'
                     healthMap[coords[player]["x"]][coords[player]["y"]] = 0
@@ -98,6 +139,7 @@ def make_testing():
                     healthMap[coords[player]["x"]][coords[player]["y"]] = health[player]
                     c.execute("UPDATE game SET y = " + str(coords[player]["y"]) + " WHERE key = ?", [player])
             if choices[player] == "go_left":
+                steps[player] += 1
                 if int(coords[player]["x"]) > 0 and mainMap[int(coords[player]["x"]) -1][coords[player]["y"]] == '.':
                     mainMap[coords[player]["x"]][coords[player]["y"]] = '.'
                     healthMap[coords[player]["x"]][coords[player]["y"]] = 0
@@ -106,6 +148,7 @@ def make_testing():
                     healthMap[coords[player]["x"]][coords[player]["y"]] = health[player]
                     c.execute("UPDATE game SET x = " + str(coords[player]["x"]) + " WHERE key = ?", [player])
             if choices[player] == "go_right":
+                steps[player] += 1
                 if int(coords[player]["x"]) < int(settings["width"]) - 1 and mainMap[int(coords[player]["x"])+1][coords[player]["y"]] == '.':
                     mainMap[coords[player]["x"]][coords[player]["y"]] = '.'
                     healthMap[coords[player]["x"]][coords[player]["y"]] = 0
@@ -117,13 +160,16 @@ def make_testing():
                 c.execute("INSERT INTO actions (key, value) VALUES (?, ?)", [player, choices[player]])
 
             else:
-                print(player+" sent incorrect command: "+choices[player])
+                print(player+" ("+names[player]+") sent incorrect command: "+str(choices[player]))
+                errors[player] += 1
             #db record
         for player in players:
-
+            if player in banlist:
+                continue
             px = coords[player]["x"]
             py = coords[player]["y"]
             if choices[player] == "fire_up":
+                shots[player] += 1
                 for y in range(py-1, -1, -1):
                     if mainMap[px][y] != '.':
                         hit_player = mainMap[px][y]
@@ -148,6 +194,7 @@ def make_testing():
                         c.execute("UPDATE game SET life = " + str(health[hit_player]) + " WHERE key = ?", [hit_player])
                         break
             if choices[player] == "fire_down":
+                shots[player] += 1
                 for y in range(py+1, int(settings["height"])):
                     if mainMap[px][y] != '.':
                         hit_player = mainMap[px][y]
@@ -171,6 +218,7 @@ def make_testing():
                         c.execute("UPDATE game SET life = " + str(health[hit_player]) + " WHERE key = ?", [hit_player])
                         break
             if choices[player] == "fire_left":
+                shots[player] += 1
                 for x in range(px-1, -1, -1):
                     if mainMap[x][py] != '.':
                         hit_player = mainMap[x][py]
@@ -195,6 +243,7 @@ def make_testing():
                         c.execute("UPDATE game SET life = " + str(health[hit_player]) + " WHERE key = ?", [hit_player])
                         break
             if choices[player] == "fire_right":
+                shots[player] += 1
                 for x in range(px+1, int(settings["width"])):
                     if mainMap[x][py] != '.':
                         hit_player = mainMap[x][py]
@@ -226,10 +275,22 @@ def make_testing():
                 #print(player + " sent "+choices[player])
 
                 # db record
+
             if int(health[player])>0:
                 c.execute(
                     "UPDATE statistics SET lifetime = " + str(ticks) + " WHERE key = ?",
                     [player])
+                c.execute(
+                    "UPDATE statistics SET shots = " + str(shots[player]) + " WHERE key = ?",
+                    [player])
+                c.execute(
+                    "UPDATE statistics SET steps = " + str(steps[player]) + " WHERE key = ?",
+                    [player])
+                c.execute(
+                    "UPDATE statistics SET errors = " + str(errors[player]) + " WHERE key = ?",
+                    [player])
+
+
             conn.commit()
         conn.commit()
         time.sleep(0.7)
@@ -243,7 +304,7 @@ while 1:
     s = make_testing()
     if s['mode']!='sandbox':
         break
-    time.sleep(10)
+    time.sleep(5)
 
 
 

@@ -1,8 +1,6 @@
-import sqlite3
+import random, string
 
-conn = sqlite3.connect('tanks.sqlite')
-c = conn.cursor()
-c.execute("SELECT key FROM players")
-result = c.fetchall()
-for record in result:
-    print(record[0])
+def getKey(N):
+    return ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(N))
+
+print(getKey(8))

@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="static/jquery-3.1.0.min.js"></script>
+    <link rel="stylesheet" href="static/bootstrap.min.css">
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/bootstrap-theme.min.css">
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="static/bootstrap.min.js"></script>
     <script>
     var timerId = setTimeout(function() {
         location.href='/stats';
@@ -20,10 +20,13 @@
 </head>
 <body>
     <table cellspacing="0" class="table">
-        <tr><th>#</th><th>Автор</th><th>HP</th><th>Попаданий</th><th>Время жизни</th><th>Счет</th></tr>
+        <tr><th>#</th><th>Автор</th><th>HP</th><th>Качество</th><th>Действия</th><th>Попаданий</th><th>Время жизни</th><th>Счет</th></tr>
     {% for i in range(len(gamestate)) %}
         <tr>
-            <td>{{i}}</td><td>{{gamestate[i]['name']}}</td><td>{{gamestate[i]['hp']}}</td><td>{{gamestate[i]['kills']}}</td><td>{{gamestate[i]['lifetime']}}</td><td>{{gamestate[i]['score']}}</td>
+            <td>{{i}}</td><td>{{gamestate[i]['name']}}</td><td>{{gamestate[i]['hp']}}</td>
+            <td><span class="label {{gamestate[i]['quality_class']}}">{{gamestate[i]['quality']}}</span></td>
+            <td>{{gamestate[i]['steps']}} ST/{{gamestate[i]['shots']}} SO</td>
+            <td>{{gamestate[i]['kills']}}</td><td>{{gamestate[i]['lifetime']}}</td><td>{{gamestate[i]['score']}}</td>
         </tr>
     {% end %}
     </table>

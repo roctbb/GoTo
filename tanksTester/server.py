@@ -6,7 +6,7 @@ import sys
 import os
 import json
 
-
+from time import gmtime, strftime
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
@@ -24,6 +24,10 @@ class MainHandler(tornado.web.RequestHandler):
             for string in result:
                 settings[string[1]] = string[2]
             if settings["mode"] == "sandbox":
+                if player[3]=="waiting":
+                    print(strftime("%Y-%m-%d %H:%M:%S", gmtime())+": "+player[2]+" ("+player[1]+") has loaded new bot")
+                else:
+                    print(strftime("%Y-%m-%d %H:%M:%S", gmtime())+": "+player[2] + " (" + player[1] + ") has reloaded bot")
                 c.execute("UPDATE players SET code = ? WHERE key = ?", [file['body'], player[2]])
                 c.execute("UPDATE players SET state = ? WHERE key = ?", ["ready", player[2]])
                 conn.commit()
@@ -58,13 +62,26 @@ class StatsHandler(tornado.web.RequestHandler):
             name = names[record[1]]
             kills = record[2]
             lifetime = record[3]
-            points = kills*20+lifetime
+            shots = record[5]
+            steps = record[4]
+            crashes = record[6]
+            errors = record[7]
+            quality = "good"
+            quality_class = "label-success"
+            if (crashes>0):
+                quality_class = "label-danger"
+                quality = "crash"
+            elif (errors>0):
+                quality = "errors"
+                quality_class = "label-warning"
+            points = kills*20+lifetime-crashes*20-errors*5
             life = 0
             c.execute("SELECT life FROM game WHERE key = ?", [record[1]])
             l = c.fetchall()
             if len(l)>0 :
                 life = l[0][0]
-            gamestate.append({"name": name,"hp":life, "kills": kills, "lifetime": lifetime, "score": points})
+            gamestate.append({"name": name,"hp":life, "kills": kills, "lifetime": lifetime, "score": points, "shots": shots,
+                              "steps": steps, "quality": quality, "quality_class": quality_class})
 
         self.render("stats.html", gamestate = sorted(gamestate, key=lambda k: -k['score']))
 class GameHandler(tornado.web.RequestHandler):
@@ -108,7 +125,10 @@ class StateHandler(tornado.web.RequestHandler):
             x = record[2]
             y = record[3]
             c.execute("SELECT value FROM actions WHERE key = ? ORDER BY id DESC LIMIT 1", [record[1]])
-            action = c.fetchone()
+            action = c.fetchall()
+            if len(action)<1:
+                continue
+            action=action[0]
             if action[0] == "fire_up":
                 for i in range(y - 1, -1, -1):
                     if mainMap[x][i] != '.' and mainMap[x][i] != '&uarr;' and mainMap[x][i] != '&darr;' and mainMap[x][i] != '&larr;' and mainMap[x][i] != '&rarr;':
