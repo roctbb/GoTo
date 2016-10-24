@@ -1,18 +1,21 @@
-#бот Харитонова Александра
-from random import choice
-name = "Эриадор Аальст"
+# Сделал Мельников Артем
+from random import randint
+name = "Typoi"
 
 def step(history):
-    a = len(history)
-    if a <= 2:
-        return choice(["камень","ножницы","бумага"])
+    if len(history) > 0:
+        x = "камень"
+        y = "ножницы"
+        z = "бумага"
+        if history[len(history) - 1][1] == x:
+            return y
+        elif history[len(history) - 1][1] == x:
+            return z
+        else:
+            return x
     else:
-        if history[len(history) - 1][0] == "камень":
-            return "бумага"
-        if history[len(history) - 1][0] == "ножницы":
-            return "камень"
-        if history[len(history) - 1][0] == "бумага":
-            return "ножницы"
-        return choice(["камень","ножницы","бумага"])
-    return choice(["камень","ножницы","бумага"])
+        return x
+
+
+
 

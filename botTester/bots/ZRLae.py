@@ -4,10 +4,10 @@ name = "Nagibator 228"
 
 def step(history):
     choice = ""
-    if len(history) > 2:
-        last2 = history[-2:]
-        if last2[0][0] == last2[1][0]:
-            i = last2[0][0]
+    if len(history) > 3:
+        last2 = history[-3:]
+        if last3[0][0] == last3[1][0] == [2][0]:
+            i = last3[0][0]
             if i == "ножицы":
                 choice = "камень"
             if i == "бумага":

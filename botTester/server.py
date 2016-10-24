@@ -4,6 +4,7 @@ import tornado.httpserver
 import sqlite3
 import sys
 import os
+import theano
 
 fight_iterations = 1001
 
@@ -130,7 +131,6 @@ class MainHandler(tornado.web.RequestHandler):
     def get(self):
         self.render("upload.html")
     def post(self):
-        '''
         try:
             file = self.request.files['file'][0]
             conn = sqlite3.connect('botTester.sqlite')
@@ -151,6 +151,7 @@ class MainHandler(tornado.web.RequestHandler):
             sys.path.append(os.path.dirname(__file__) + "/bots")
             makeFullTest()
             self.redirect("/results")
+            '''
 
 class ResultsHandler(tornado.web.RequestHandler):
     def get(self):

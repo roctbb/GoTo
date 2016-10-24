@@ -2,18 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53bfc274-de8d-4699-b588-bff006cc943e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/5JKH7PGU.py" afterPath="$PROJECT_DIR$/bots/5JKH7PGU.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/70V0GPCW.py" afterPath="$PROJECT_DIR$/bots/70V0GPCW.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/DDGNL3BW.py" afterPath="$PROJECT_DIR$/bots/DDGNL3BW.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/E0U51CZR.py" afterPath="$PROJECT_DIR$/bots/E0U51CZR.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/GURBE7QE.py" afterPath="$PROJECT_DIR$/bots/GURBE7QE.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/HX7RL9JQ.py" afterPath="$PROJECT_DIR$/bots/HX7RL9JQ.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/IQD15S5B.py" afterPath="$PROJECT_DIR$/bots/IQD15S5B.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/LWXBVY28.py" afterPath="$PROJECT_DIR$/bots/LWXBVY28.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/QHQJHE68.py" afterPath="$PROJECT_DIR$/bots/QHQJHE68.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/RP1CGMS1.py" afterPath="$PROJECT_DIR$/bots/RP1CGMS1.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/U4K2DFTM.py" afterPath="$PROJECT_DIR$/bots/U4K2DFTM.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/WCAH3MOU.py" afterPath="$PROJECT_DIR$/bots/WCAH3MOU.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/ZABLBMBL.py" afterPath="$PROJECT_DIR$/bots/ZABLBMBL.py" />
+    </list>
+    <list id="5acf5f2f-1876-4498-9d0d-105618dd88c8" name="New changelist" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../botTester/botTester.sqlite" afterPath="$PROJECT_DIR$/../botTester/botTester.sqlite" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tanks.sqlite" afterPath="$PROJECT_DIR$/tanks.sqlite" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../botTester/bots/VkcsX.py" afterPath="$PROJECT_DIR$/../botTester/bots/VkcsX.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../botTester/bots/ZRLae.py" afterPath="$PROJECT_DIR$/../botTester/bots/ZRLae.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../botTester/bots/xCpFO.py" afterPath="$PROJECT_DIR$/../botTester/bots/xCpFO.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../botTester/server.py" afterPath="$PROJECT_DIR$/../botTester/server.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/game.py" afterPath="$PROJECT_DIR$/game.py" />
     </list>
     <ignored path="tanksTester.iws" />
     <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +34,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/tanksTester$game.coverage" NAME="game Coverage Results" MODIFIED="1474058484542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -34,8 +49,8 @@
       <file leaf-file-name="server.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+            <state relative-caret-position="435">
+              <caret line="29" column="71" selection-start-line="29" selection-start-column="71" selection-end-line="29" selection-end-column="71" />
               <folding>
                 <element signature="e#22#40#0" expanded="true" />
               </folding>
@@ -43,36 +58,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PZKR2KWD.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bots/PZKR2KWD.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="H2FVDFO7.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bots/H2FVDFO7.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="game.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/game.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
-              <folding>
-                <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="75">
+              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="10" selection-end-column="51" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -80,8 +71,18 @@
       <file leaf-file-name="stats.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stats.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+            <state relative-caret-position="150">
+              <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="upload.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/upload.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -90,40 +91,45 @@
       <file leaf-file-name="game.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+            <state relative-caret-position="165">
+              <caret line="54" column="20" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
               <folding>
-                <element signature="e#0#14#0" expanded="true" />
+                <marker date="1472027090000" expanded="true" signature="525:547" ph="SELECT * FRO... settings" />
+                <marker date="1472027090000" expanded="true" signature="755:806" ph="SELECT key, " />
+                <marker date="1472027090000" expanded="true" signature="1091:1113" ph="DELETE FROM " />
+                <marker date="1472027090000" expanded="true" signature="1131:1150" ph="DELETE FROM " />
+                <marker date="1472027090000" expanded="true" signature="1168:1184" ph="DELETE FROM " />
+                <marker date="1472027090000" expanded="true" signature="2291:2330" ph="INSERT INTO statistics... " />
+                <marker date="1472027090000" expanded="true" signature="2362:2410" ph="INSERT INTO game... " />
+                <marker date="1472027090000" expanded="true" signature="2463:2508" ph="UPDATE setti... " />
+                <marker date="1472027090000" expanded="true" signature="3017:3055" ph="SELECT code players" />
+                <marker date="1472027090000" expanded="true" signature="3832:3878" ph="INSERT INTO actions... " />
+                <marker date="1472027090000" expanded="true" signature="3956:4030" ph="UPDATE stati... " />
+                <marker date="1472027090000" expanded="true" signature="4785:4851" ph="UPDATE game " />
+                <marker date="1472027090000" expanded="true" signature="5478:5544" ph="UPDATE game " />
+                <marker date="1472027090000" expanded="true" signature="6151:6217" ph="UPDATE game " />
+                <marker date="1472027090000" expanded="true" signature="6847:6913" ph="UPDATE game " />
+                <marker date="1472027090000" expanded="true" signature="7257:7303" ph="INSERT INTO actions... " />
+                <marker date="1472027090000" expanded="true" signature="8716:8784" ph="UPDATE game " />
+                <marker date="1472027090000" expanded="true" signature="9861:9929" ph="UPDATE game " />
+                <marker date="1472027090000" expanded="true" signature="11030:11098" ph="UPDATE game " />
+                <marker date="1472027090000" expanded="true" signature="12217:12285" ph="UPDATE game " />
+                <marker date="1472027090000" expanded="true" signature="12528:12598" ph="UPDATE stati... " />
+                <marker date="1472027090000" expanded="true" signature="12805:12870" ph="UPDATE stati... " />
+                <marker date="1472027090000" expanded="true" signature="12951:13021" ph="UPDATE stati... " />
+                <marker date="1472027090000" expanded="true" signature="13102:13172" ph="UPDATE stati... " />
+                <marker date="1472027090000" expanded="true" signature="13253:13325" ph="UPDATE stati... " />
+                <marker date="1472027090000" expanded="true" signature="13448:13493" ph="UPDATE setti... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="X4LN8SSX.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bots/X4LN8SSX.py">
+      <file leaf-file-name="netutil.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/miniconda3/lib/python3.5/site-packages/tornado/netutil.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stupidBot.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stupidBot.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+            <state relative-caret-position="2760">
+              <caret line="195" column="0" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -146,22 +152,39 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/setup.py" />
-        <option value="$PROJECT_DIR$/upload.html" />
         <option value="$PROJECT_DIR$/bots/Revenko Dasha.py" />
         <option value="$PROJECT_DIR$/testBot.py" />
-        <option value="$PROJECT_DIR$/game.html" />
         <option value="$PROJECT_DIR$/stupidBot.py" />
         <option value="$PROJECT_DIR$/bots/Z.py" />
         <option value="$PROJECT_DIR$/bots/2.py" />
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/bots/PZKR2KWD.py" />
-        <option value="$PROJECT_DIR$/bots/X4LN8SSX.py" />
-        <option value="$PROJECT_DIR$/stats.html" />
-        <option value="$PROJECT_DIR$/server.py" />
         <option value="$PROJECT_DIR$/bots/H2FVDFO7.py" />
+        <option value="$PROJECT_DIR$/bots/MASTERKEY.py" />
+        <option value="$PROJECT_DIR$/bots/70V0GPCW.py" />
+        <option value="$PROJECT_DIR$/bots/PZKR2KWD.py" />
+        <option value="$PROJECT_DIR$/bots/DDGNL3BW.py" />
+        <option value="$PROJECT_DIR$/bots/LWXBVY28.py" />
+        <option value="$PROJECT_DIR$/bots/ZABLBMBL.py" />
+        <option value="$PROJECT_DIR$/bots/WCAH3MOU.py" />
+        <option value="$PROJECT_DIR$/bots/RP1CGMS1.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/bots/HX7RL9JQ.py" />
+        <option value="$PROJECT_DIR$/bots/GURBE7QE.py" />
+        <option value="$PROJECT_DIR$/bots/5JKH7PGU.py" />
+        <option value="$PROJECT_DIR$/bots/QHQJHE68.py" />
+        <option value="$PROJECT_DIR$/bots/X4LN8SSX.py" />
+        <option value="$PROJECT_DIR$/game.html" />
+        <option value="$PROJECT_DIR$/stats.html" />
+        <option value="$PROJECT_DIR$/upload.html" />
+        <option value="$PROJECT_DIR$/server.py" />
         <option value="$PROJECT_DIR$/game.py" />
       </list>
     </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
@@ -241,8 +264,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -250,6 +273,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -259,24 +283,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.server">
-    <configuration default="false" name="game" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tanksTester" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/game.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.game">
     <configuration default="false" name="setup" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -289,6 +296,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tanksTester" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/setup.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -306,6 +314,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tanksTester" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -323,7 +332,26 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tanksTester" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="game" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/Library/Frameworks/Python.framework/Versions/3.4/bin/python3.4" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tanksTester" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/game.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -340,6 +368,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tanksTester" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -354,6 +383,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <module name="tanksTester" />
       <method />
     </configuration>
@@ -367,6 +397,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tanksTester" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -386,6 +417,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tanksTester" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -405,6 +437,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tanksTester" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -426,6 +459,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tanksTester" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -448,6 +482,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tanksTester" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -463,10 +498,10 @@
       <method />
     </configuration>
     <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="Python.game" />
-      <item index="1" class="java.lang.String" itemvalue="Python.setup" />
-      <item index="2" class="java.lang.String" itemvalue="Python.test" />
-      <item index="3" class="java.lang.String" itemvalue="Python.server" />
+      <item index="0" class="java.lang.String" itemvalue="Python.setup" />
+      <item index="1" class="java.lang.String" itemvalue="Python.test" />
+      <item index="2" class="java.lang.String" itemvalue="Python.server" />
+      <item index="3" class="java.lang.String" itemvalue="Python.game" />
     </list>
     <recent_temporary>
       <list size="4">
@@ -486,11 +521,34 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="53bfc274-de8d-4699-b588-bff006cc943e" name="Default" comment="" />
+      <changelist id="5acf5f2f-1876-4498-9d0d-105618dd88c8" name="New changelist" comment="" />
       <created>1471703012233</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1471703012233</updated>
     </task>
+    <task id="LOCAL-00001" summary="healthMap fix">
+      <created>1471945918847</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1471945918847</updated>
+    </task>
+    <task id="LOCAL-00002" summary="final version">
+      <created>1474057451643</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1474057451643</updated>
+    </task>
+    <task id="LOCAL-00003" summary="final version 1">
+      <created>1474104381468</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1474104381468</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -506,22 +564,23 @@
     <frame x="0" y="23" width="1440" height="827" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24930556" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32863188" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33991536" sideWeight="0.50528544" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24541607" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33880422" sideWeight="0.4947146" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32863188" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39915374" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3977433" sideWeight="0.84002817" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -555,12 +614,26 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="healthMap fix" />
+    <MESSAGE value="final version" />
+    <MESSAGE value="final version 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="final version 1" />
+    <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/game.py</url>
+          <line>304</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="20" />
+      <option name="time" value="27" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -570,6 +643,65 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/stats.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1472027090000" expanded="true" signature="525:547" ph="SELECT * FRO... settings" />
+            <marker date="1472027090000" expanded="true" signature="755:806" ph="SELECT key, " />
+            <marker date="1472027090000" expanded="true" signature="1091:1113" ph="DELETE FROM " />
+            <marker date="1472027090000" expanded="true" signature="1131:1150" ph="DELETE FROM " />
+            <marker date="1472027090000" expanded="true" signature="1168:1184" ph="DELETE FROM " />
+            <marker date="1472027090000" expanded="true" signature="2291:2330" ph="INSERT INTO statistics... " />
+            <marker date="1472027090000" expanded="true" signature="2362:2410" ph="INSERT INTO game... " />
+            <marker date="1472027090000" expanded="true" signature="2463:2508" ph="UPDATE setti... " />
+            <marker date="1472027090000" expanded="true" signature="3017:3055" ph="SELECT code players" />
+            <marker date="1472027090000" expanded="true" signature="3832:3878" ph="INSERT INTO actions... " />
+            <marker date="1472027090000" expanded="true" signature="3956:4030" ph="UPDATE stati... " />
+            <marker date="1472027090000" expanded="true" signature="4785:4851" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="5478:5544" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="6151:6217" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="6847:6913" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="7257:7303" ph="INSERT INTO actions... " />
+            <marker date="1472027090000" expanded="true" signature="8716:8784" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="9861:9929" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="11030:11098" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="12217:12285" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="12528:12598" ph="UPDATE stati... " />
+            <marker date="1472027090000" expanded="true" signature="12805:12870" ph="UPDATE stati... " />
+            <marker date="1472027090000" expanded="true" signature="12951:13021" ph="UPDATE stati... " />
+            <marker date="1472027090000" expanded="true" signature="13102:13172" ph="UPDATE stati... " />
+            <marker date="1472027090000" expanded="true" signature="13253:13325" ph="UPDATE stati... " />
+            <marker date="1472027090000" expanded="true" signature="13448:13493" ph="UPDATE setti... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/miniconda3/lib/python3.5/site-packages/tornado/netutil.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2760">
+          <caret line="195" column="0" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -584,11 +716,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="645">
           <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
-          <folding>
-            <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -605,7 +733,32 @@
         <state relative-caret-position="3465">
           <caret line="236" column="17" selection-start-line="236" selection-start-column="17" selection-end-line="236" selection-end-column="17" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1472027090000" expanded="true" signature="525:547" ph="SELECT * FRO... settings" />
+            <marker date="1472027090000" expanded="true" signature="755:806" ph="SELECT key, " />
+            <marker date="1472027090000" expanded="true" signature="1091:1113" ph="DELETE FROM " />
+            <marker date="1472027090000" expanded="true" signature="1131:1150" ph="DELETE FROM " />
+            <marker date="1472027090000" expanded="true" signature="1168:1184" ph="DELETE FROM " />
+            <marker date="1472027090000" expanded="true" signature="2291:2330" ph="INSERT INTO statistics... " />
+            <marker date="1472027090000" expanded="true" signature="2362:2410" ph="INSERT INTO game... " />
+            <marker date="1472027090000" expanded="true" signature="2463:2508" ph="UPDATE setti... " />
+            <marker date="1472027090000" expanded="true" signature="3017:3055" ph="SELECT code players" />
+            <marker date="1472027090000" expanded="true" signature="3832:3878" ph="INSERT INTO actions... " />
+            <marker date="1472027090000" expanded="true" signature="3956:4030" ph="UPDATE stati... " />
+            <marker date="1472027090000" expanded="true" signature="4785:4851" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="5478:5544" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="6151:6217" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="6847:6913" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="7257:7303" ph="INSERT INTO actions... " />
+            <marker date="1472027090000" expanded="true" signature="8716:8784" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="9861:9929" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="11030:11098" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="12217:12285" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="12528:12598" ph="UPDATE stati... " />
+            <marker date="1472027090000" expanded="true" signature="12805:12870" ph="UPDATE stati... " />
+            <marker date="1472027090000" expanded="true" signature="12951:13021" ph="UPDATE stati... " />
+            <marker date="1472027090000" expanded="true" signature="13102:13172" ph="UPDATE stati... " />
+            <marker date="1472027090000" expanded="true" signature="13253:13325" ph="UPDATE stati... " />
+            <marker date="1472027090000" expanded="true" signature="13448:13493" ph="UPDATE setti... " />
           </folding>
         </state>
       </provider>
@@ -614,7 +767,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -622,7 +774,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -630,7 +781,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -649,7 +799,32 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1472027090000" expanded="true" signature="525:547" ph="SELECT * FRO... settings" />
+            <marker date="1472027090000" expanded="true" signature="755:806" ph="SELECT key, " />
+            <marker date="1472027090000" expanded="true" signature="1091:1113" ph="DELETE FROM " />
+            <marker date="1472027090000" expanded="true" signature="1131:1150" ph="DELETE FROM " />
+            <marker date="1472027090000" expanded="true" signature="1168:1184" ph="DELETE FROM " />
+            <marker date="1472027090000" expanded="true" signature="2291:2330" ph="INSERT INTO statistics... " />
+            <marker date="1472027090000" expanded="true" signature="2362:2410" ph="INSERT INTO game... " />
+            <marker date="1472027090000" expanded="true" signature="2463:2508" ph="UPDATE setti... " />
+            <marker date="1472027090000" expanded="true" signature="3017:3055" ph="SELECT code players" />
+            <marker date="1472027090000" expanded="true" signature="3832:3878" ph="INSERT INTO actions... " />
+            <marker date="1472027090000" expanded="true" signature="3956:4030" ph="UPDATE stati... " />
+            <marker date="1472027090000" expanded="true" signature="4785:4851" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="5478:5544" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="6151:6217" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="6847:6913" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="7257:7303" ph="INSERT INTO actions... " />
+            <marker date="1472027090000" expanded="true" signature="8716:8784" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="9861:9929" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="11030:11098" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="12217:12285" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="12528:12598" ph="UPDATE stati... " />
+            <marker date="1472027090000" expanded="true" signature="12805:12870" ph="UPDATE stati... " />
+            <marker date="1472027090000" expanded="true" signature="12951:13021" ph="UPDATE stati... " />
+            <marker date="1472027090000" expanded="true" signature="13102:13172" ph="UPDATE stati... " />
+            <marker date="1472027090000" expanded="true" signature="13253:13325" ph="UPDATE stati... " />
+            <marker date="1472027090000" expanded="true" signature="13448:13493" ph="UPDATE setti... " />
           </folding>
         </state>
       </provider>
@@ -658,7 +833,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="27" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -666,9 +840,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#13#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -680,17 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#13#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bots/E0U51CZR.py" />
     <entry file="file://$PROJECT_DIR$/testBot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="417">
@@ -698,93 +858,244 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bots/GURBE7QE.py" />
-    <entry file="file://$PROJECT_DIR$/upload.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="32" selection-start-line="6" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bots/Z.py" />
     <entry file="file://$PROJECT_DIR$/bots/4.py" />
     <entry file="file://$PROJECT_DIR$/bots/2.py" />
-    <entry file="file://$PROJECT_DIR$/test.py">
+    <entry file="file://$PROJECT_DIR$/bots/MASTERKEY.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bots/MASTERKEY.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-195">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bots/HX7RL9JQ.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bots/RP1CGMS1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bots/70V0GPCW.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/stupidBot.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bots/ZABLBMBL.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bots/LWXBVY28.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bots/LWXBVY28.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bots/PZKR2KWD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bots/WCAH3MOU.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bots/DDGNL3BW.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-335">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bots/E0U51CZR.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bots/H2FVDFO7.py" />
+    <entry file="file://$PROJECT_DIR$/bots/RP1CGMS1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bots/70V0GPCW.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bots/HX7RL9JQ.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bots/GURBE7QE.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bots/ZABLBMBL.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bots/5JKH7PGU.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bots/QHQJHE68.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/miniconda3/lib/python3.5/site-packages/tornado/netutil.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2760">
+          <caret line="195" column="0" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bots/X4LN8SSX.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="225">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/stats.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        <state relative-caret-position="150">
+          <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/game.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
-          <folding>
-            <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="75">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="10" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+        <state relative-caret-position="435">
+          <caret line="29" column="71" selection-start-line="29" selection-start-column="71" selection-end-line="29" selection-end-column="71" />
           <folding>
             <element signature="e#22#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bots/PZKR2KWD.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bots/H2FVDFO7.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+        <state relative-caret-position="165">
+          <caret line="54" column="20" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1472027090000" expanded="true" signature="525:547" ph="SELECT * FRO... settings" />
+            <marker date="1472027090000" expanded="true" signature="755:806" ph="SELECT key, " />
+            <marker date="1472027090000" expanded="true" signature="1091:1113" ph="DELETE FROM " />
+            <marker date="1472027090000" expanded="true" signature="1131:1150" ph="DELETE FROM " />
+            <marker date="1472027090000" expanded="true" signature="1168:1184" ph="DELETE FROM " />
+            <marker date="1472027090000" expanded="true" signature="2291:2330" ph="INSERT INTO statistics... " />
+            <marker date="1472027090000" expanded="true" signature="2362:2410" ph="INSERT INTO game... " />
+            <marker date="1472027090000" expanded="true" signature="2463:2508" ph="UPDATE setti... " />
+            <marker date="1472027090000" expanded="true" signature="3017:3055" ph="SELECT code players" />
+            <marker date="1472027090000" expanded="true" signature="3832:3878" ph="INSERT INTO actions... " />
+            <marker date="1472027090000" expanded="true" signature="3956:4030" ph="UPDATE stati... " />
+            <marker date="1472027090000" expanded="true" signature="4785:4851" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="5478:5544" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="6151:6217" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="6847:6913" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="7257:7303" ph="INSERT INTO actions... " />
+            <marker date="1472027090000" expanded="true" signature="8716:8784" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="9861:9929" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="11030:11098" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="12217:12285" ph="UPDATE game " />
+            <marker date="1472027090000" expanded="true" signature="12528:12598" ph="UPDATE stati... " />
+            <marker date="1472027090000" expanded="true" signature="12805:12870" ph="UPDATE stati... " />
+            <marker date="1472027090000" expanded="true" signature="12951:13021" ph="UPDATE stati... " />
+            <marker date="1472027090000" expanded="true" signature="13102:13172" ph="UPDATE stati... " />
+            <marker date="1472027090000" expanded="true" signature="13253:13325" ph="UPDATE stati... " />
+            <marker date="1472027090000" expanded="true" signature="13448:13493" ph="UPDATE setti... " />
           </folding>
         </state>
       </provider>

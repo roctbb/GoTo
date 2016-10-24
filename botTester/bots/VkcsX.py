@@ -24,7 +24,7 @@ def step(history):
                 kam += n
         elif  history[len(history) - 1][0] == history[len(history) - 2][0]:
             # Если было 2, но не 3, то все хорошо
-            n = 20
+            n = -20
             if history[len(history) - 1][0] == "бумага":
                 bym += n//2
                 kam -= n
