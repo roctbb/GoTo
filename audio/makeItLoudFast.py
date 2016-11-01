@@ -1,4 +1,4 @@
-__author__ = 'roctbb'
+#github.com/roctbb/GoTo
 
 import wave,struct
 
@@ -17,6 +17,7 @@ nframes = source.getnframes()
 data = struct.unpack("<"+str(nframes)+"h", source.readframes(nframes))
 newdata = []
 
+data.reverse()
 
 for frame in data:
     newdata.append(frame*10)

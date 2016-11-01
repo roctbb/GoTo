@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Наш первый веб сервер</title>
+</head>
+<body>
+    <h1>Это наша первая страница</h1>
+    <p>Тут очень интересно.</p>
+    <p>Правда.</p>
+    <img src="http://s.pikabu.ru/post_img/2013/06/14/6/1371197157_2129347213.jpg" width="500"/>
+    <h3>Милые коты:</h3>
+    <ul>
+       {% for cat in cats %}
+         <li>{{ cat }}</li>
+       {% end %}
+     </ul>
+</body>
+</html>
