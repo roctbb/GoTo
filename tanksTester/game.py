@@ -105,7 +105,7 @@ def make_testing():
                 module = __import__(player, fromlist=["make_choice"])
                 module = imp.reload(module)
                 makeChoice = getattr(module, "make_choice")
-                #print("Now running:" +player+" ("+names[player]+")")
+                print("Now running:" +player+" ("+names[player]+")")
                 choices[player] = makeChoice(int(coords[player]["x"]), int(coords[player]["y"]), healthMap); #тут выбор
             except Exception as e:
                 print(player+" ("+names[player]+") has crashed :( :"+str(e))

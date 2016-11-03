@@ -8,7 +8,7 @@ def getKey(N):
 conn = sqlite3.connect('tanks.sqlite')
 c = conn.cursor()
 
-names = ['Revenko Dasha', 'Savlaev Ruslan','Анисимов Мануэль', 'Богомолов Алексей', 'Бондарев Иван', 'Вайсберг Гриша','Волох Андрей','Гийар Филипп','Курылев Александр', 'Павлов Артём', 'Павлов Лев', 'Семкин Владислав', '	Турубанова Светлана', 'Ульяненков Ярослав', '	Черемисина Настя', 'Швецова  Мария']
+names = ['Убиватор666']
 for name in names:
     key = getKey(8)
     c.execute("INSERT INTO players (name, key, state) VALUES (?,?,?)", [name, key, "waiting"])
