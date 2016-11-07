@@ -24,8 +24,8 @@
     {% for i in range(len(gamestate)) %}
         <tr>
             <td>{{i}}</td><td>{{gamestate[i]['name']}}</td><td>{{gamestate[i]['hp']}}</td>
-            <td><span class="label {{gamestate[i]['quality_class']}}">{{gamestate[i]['quality']}}</span></td>
-            <td>{{gamestate[i]['steps']}} ST/{{gamestate[i]['shots']}} SO</td>
+            <td><span class="label {{gamestate[i]['quality_class']}}" title="{{gamestate[i]['lastCrash']}}">{{gamestate[i]['quality']}}</span></td>
+            <td>{{gamestate[i]['steps']}} ST/{{gamestate[i]['shots']}} SH</td>
             <td>{{gamestate[i]['kills']}}</td><td>{{gamestate[i]['lifetime']}}</td><td>{{gamestate[i]['score']}}</td>
         </tr>
     {% end %}

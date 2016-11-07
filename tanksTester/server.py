@@ -66,6 +66,7 @@ class StatsHandler(tornado.web.RequestHandler):
             steps = record[4]
             crashes = record[6]
             errors = record[7]
+            lastCrash = record[8]
             quality = "good"
             quality_class = "label-success"
             if (crashes>0):
@@ -81,7 +82,7 @@ class StatsHandler(tornado.web.RequestHandler):
             if len(l)>0 :
                 life = l[0][0]
             gamestate.append({"name": name,"hp":life, "kills": kills, "lifetime": lifetime, "score": points, "shots": shots,
-                              "steps": steps, "quality": quality, "quality_class": quality_class})
+                              "steps": steps, "quality": quality, "quality_class": quality_class, "lastCrash": lastCrash})
 
         self.render("stats.html", gamestate = sorted(gamestate, key=lambda k: -k['score']))
 class GameHandler(tornado.web.RequestHandler):

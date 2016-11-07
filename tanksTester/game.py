@@ -49,6 +49,8 @@ def make_testing():
     mainMap = [['.' for i in range(int(settings["height"]))] for j in range(int(settings["width"]))]
     healthMap = [[0 for i in range(int(settings["height"]))] for j in range(int(settings["width"]))]
 
+    history = {}
+
     coords = dict()
     health = dict()
     errors = dict()
@@ -70,6 +72,7 @@ def make_testing():
         shots[player] = 0
         health[player] = int(settings["max_health"])
         kills[player] = 0
+        history[player]=[]
         x = random.randint(0, int(settings["width"])-1)
         y = random.randint(0, int(settings["height"])-1)
         while mainMap[x][y]!='.':
@@ -92,8 +95,15 @@ def make_testing():
         print("current tick:"+str(ticks))
         choices = dict()
         ticks += 1
+
+        historyMap = [[0 for i in range(int(settings["height"]))] for j in range(int(settings["width"]))]
+
+
         for player in players:
             choices[player] = ""
+
+            historyMap[coords[player]["x"]][coords[player]["y"]] = {"life": health[player], "history": history[player]}
+
             if player in banlist:
                 continue
             try:
@@ -106,17 +116,26 @@ def make_testing():
                 module = imp.reload(module)
                 makeChoice = getattr(module, "make_choice")
                 print("Now running:" +player+" ("+names[player]+")")
-                choices[player] = makeChoice(int(coords[player]["x"]), int(coords[player]["y"]), healthMap); #тут выбор
+                if len(historyMap)==1:
+                    choices[player] = makeChoice(int(coords[player]["x"]), int(coords[player]["y"]), historyMap); #тут выбор
+                else:
+                    choices[player] = makeChoice(int(coords[player]["x"]), int(coords[player]["y"]), historyMap);  # тут выбор
+
             except Exception as e:
                 print(player+" ("+names[player]+") has crashed :( :"+str(e))
+                history[player].append("crash")
                 choices[player] = "crash"
                 crashes[player]+=1
                 c.execute("INSERT INTO actions (key, value) VALUES (?, ?)", [player, choices[player]])
                 c.execute(
                     "UPDATE statistics SET crashes = " + str(crashes[player]) + " WHERE key = ?",
                     [player])
+                c.execute(
+                    "UPDATE statistics SET lastCrash = '" + str(e) + "' WHERE key = ?",
+                    [player])
         conn.commit()
-        #print(healthMap)
+
+        print(historyMap)
         for player in players:
             if player in banlist:
                 continue
@@ -158,10 +177,11 @@ def make_testing():
                     c.execute("UPDATE game SET x = " + str(coords[player]["x"]) + " WHERE key = ?", [player])
             if choices[player]=="go_up" or choices[player] == "go_down" or choices[player] == "go_left" or choices[player] == "go_right" or  choices[player] == "fire_up" or choices[player] == "fire_down" or choices[player] == "fire_left" or choices[player] == "fire_right" or choices[player] == "crash":
                 c.execute("INSERT INTO actions (key, value) VALUES (?, ?)", [player, choices[player]])
-
+                history[player].append(choices[player])
             else:
                 print(player+" ("+names[player]+") sent incorrect command: "+str(choices[player]))
                 errors[player] += 1
+                history[player].append("error")
             #db record
         for player in players:
             if player in banlist:
