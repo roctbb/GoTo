@@ -98,11 +98,11 @@ def make_testing():
 
         historyMap = [[0 for i in range(int(settings["height"]))] for j in range(int(settings["width"]))]
 
+        for player in players:
+            historyMap[coords[player]["x"]][coords[player]["y"]] = {"life": health[player], "history": history[player]}
 
         for player in players:
             choices[player] = ""
-
-            historyMap[coords[player]["x"]][coords[player]["y"]] = {"life": health[player], "history": history[player]}
 
             if player in banlist:
                 continue
@@ -131,8 +131,8 @@ def make_testing():
                     "UPDATE statistics SET crashes = " + str(crashes[player]) + " WHERE key = ?",
                     [player])
                 c.execute(
-                    "UPDATE statistics SET lastCrash = '" + str(e) + "' WHERE key = ?",
-                    [player])
+                    "UPDATE statistics SET lastCrash = ? WHERE key = ?",
+                    [str(e), player])
         conn.commit()
 
         print(historyMap)
