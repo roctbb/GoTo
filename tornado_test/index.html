@@ -3,17 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Наш первый веб сервер</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
-<body>
-    <h1>Это наша первая страница</h1>
-    <p>Тут очень интересно.</p>
-    <p>Правда.</p>
-    <img src="http://s.pikabu.ru/post_img/2013/06/14/6/1371197157_2129347213.jpg" width="500"/>
-    <h3>Милые коты:</h3>
-    <ul>
-       {% for cat in cats %}
-         <li>{{ cat }}</li>
-       {% end %}
-     </ul>
+<body >
+    <div class="container">
+    <h1>Отзыв о коте</h1>
+
+    <form action="/save" method="post">
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="cat_name">Имя кота</label>
+            <input type="text" class="form-control" name="cat_name" id="cat_name" placeholder="Васька">
+          </div>
+
+          <div class="form-group">
+            <label for="cat_review">Отзыв</label>
+            <textarea class="form-control" name="cat_review" id="cat_review"></textarea>
+          </div>
+
+          <div class="checkbox">
+            <label>
+              <input name="galochka" type="checkbox" value="yes"> Ссыт на ковер
+            </label>
+          </div>
+       <button type="submit" class="btn btn-default">Сохранить</button>
+
+
+    </form>
+        </div>
+
 </body>
 </html>
