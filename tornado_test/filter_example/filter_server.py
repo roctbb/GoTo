@@ -5,6 +5,8 @@ import uuid
 import tornado.ioloop
 import tornado.web
 
+from filter import process
+
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
         self.render('upload.html')
@@ -15,11 +17,9 @@ class MainHandler(tornado.web.RequestHandler):
         cname = str(uuid.uuid4()) + extn
         fh = open('images/' + cname, 'wb')
         fh.write(fileinfo['body'])
-        #тут ваш фильтр на images/ cname . extn
 
-        fh = open('results/' + cname, 'wb') #это временно, сохранить в result
-        fh.write(fileinfo['body'])#должен ваш фильтр
-        
+        process('images/' + cname, 'results/' + cname)
+
         self.render('result.html', name=cname)
 
 
