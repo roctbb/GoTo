@@ -16,3 +16,10 @@ for offset in range(0,col,100):
 
 for post in posts:
     print(post["text"] + " - " + post["likes"]["count"])
+
+lst = [1,2,3,4,5,6,7]
+
+a = 3
+
+if a in lst:
+    pass
