@@ -20,7 +20,7 @@
             margin: 0 !important;
         }
         body {
-            background-image: url(static/bg.jpg);
+            background-image: url(static/grass.jpg);
             background-repeat: repeat;
         }
         td {
@@ -43,6 +43,18 @@
             background-size: contain;
             background-position: center;
         }
+        .brick
+        {
+            background-image: url(static/brick.jpg);
+            background-size: contain;
+            background-position: center;
+        }
+        .coin
+        {
+            background-image: url(static/coin.png);
+            background-size: contain;
+            background-position: center;
+        }
     </style>
     <script>
     var timerId = setInterval(function() {
@@ -52,10 +64,10 @@
             result = JSON.parse(data);
             result.forEach(function(line, i, arr) {
                 line.forEach(function(item, j, arr1) {
-                    if (item!='.' && item!='&uarr;' && item!='&larr;' && item!='&rarr;' && item!='&darr;')
+                    if (item!='.' && item!='&uarr;' && item!='&larr;' && item!='&rarr;' && item!='&darr;' && item!='#' && item!='@')
                     {
                         $('#'+j+'_'+i).addClass("player");
-                        $('#'+j+"_"+i).removeClass("vertical horizontal");
+                        $('#'+j+"_"+i).removeClass("vertical horizontal coin");
                         if (item['hit']==1)
                         {
                             alert
@@ -69,11 +81,19 @@
                     }
                     else
                     {
-                        $('#'+j+"_"+i).removeClass("player vertical horizontal");
+                        $('#'+j+"_"+i).removeClass("player vertical horizontal coin");
                         if (item=='.')
                         {
 
                             $('#'+j+'_'+i).html("&nbsp;");
+                        }
+                        if (item=='#')
+                        {
+                            $('#'+j+'_'+i).addClass("brick");
+                        }
+                        if (item=='@')
+                        {
+                            $('#'+j+'_'+i).addClass("coin");
                         }
                         if (item=='&larr;' || item=='&rarr;')
                         {

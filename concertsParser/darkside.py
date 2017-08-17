@@ -5,14 +5,14 @@ adress = "/show/index.phtml"
 
 page = 0
 result = {}
-for page in range(0,8217,104):
+for page in range(0,8425,117):
     print("Now processing page "+str(page))
     page = html.parse(main_domain + adress+ '?cp=' + str(page))
 
     concerts = page.getroot().find_class('titleshow')
 
     for concert in concerts:
-        name = concert.text_content()
+        name = concert.text_content().lower()
         if name in result.keys():
             result[name]+=1
         else:
@@ -20,7 +20,7 @@ for page in range(0,8217,104):
 
     concerts = page.getroot().find_class('titles')
     for concert in concerts:
-        name = concert.findall('.//a').pop().text_content()
+        name = concert.findall('.//a').pop().text_content().lower()
         if name in result.keys():
             result[name] += 1
         else:

@@ -41,7 +41,8 @@ class MainHandler(tornado.web.RequestHandler):
                     return
 
             self.redirect("/game")
-        except:
+        except Exception as e:
+            print(e)
             self.write("<script>alert('Ошибка загрузки!');location.href=location.href;</script>")
 
         sys.path.append(os.path.dirname(__file__) + "/bots")
@@ -67,6 +68,7 @@ class StatsHandler(tornado.web.RequestHandler):
             crashes = record[6]
             errors = record[7]
             lastCrash = record[8]
+            coins = record[9]
             quality = "good"
             quality_class = "label-success"
             if (crashes>0):
@@ -75,14 +77,14 @@ class StatsHandler(tornado.web.RequestHandler):
             elif (errors>0):
                 quality = "errors"
                 quality_class = "label-warning"
-            points = kills*20+lifetime-crashes*20-errors*5
+            points = coins*50 + kills*20+lifetime-crashes*5
             life = 0
             c.execute("SELECT life FROM game WHERE key = ?", [record[1]])
             l = c.fetchall()
             if len(l)>0 :
                 life = l[0][0]
             gamestate.append({"name": name,"hp":life, "kills": kills, "lifetime": lifetime, "score": points, "shots": shots,
-                              "steps": steps, "quality": quality, "quality_class": quality_class, "lastCrash": lastCrash})
+                              "steps": steps, "quality": quality, "quality_class": quality_class, "lastCrash": lastCrash, "coins": coins})
 
         self.render("stats.html", gamestate = sorted(gamestate, key=lambda k: -k['score']))
 class GameHandler(tornado.web.RequestHandler):
@@ -94,6 +96,13 @@ class GameHandler(tornado.web.RequestHandler):
         settings = dict()
         for string in result:
             settings[string[1]] = string[2]
+        with open('map.txt') as map_file:
+            map_data = map_file.read()
+            mainMap = map_data.split('\n')
+            for i in range(len(mainMap)):
+                mainMap[i] = mainMap[i].split(' ')
+            settings["height"] = len(mainMap[0])
+            settings["width"] = len(mainMap)
         self.render("game.html", width=settings["width"], height=settings["height"])
 
 class StateHandler(tornado.web.RequestHandler):
@@ -105,7 +114,13 @@ class StateHandler(tornado.web.RequestHandler):
         settings = dict()
         for string in result:
             settings[string[1]] = string[2]
-        mainMap = [['.' for i in range(int(settings["height"]))] for j in range(int(settings["width"]))]
+        with open('map.txt') as map_file:
+            map_data = map_file.read()
+            mainMap = map_data.split('\n')
+            for i in range(len(mainMap)):
+                mainMap[i] = mainMap[i].split(' ')
+            settings["height"] = len(mainMap[0])
+            settings["width"] = len(mainMap)
 
         c.execute("SELECT * FROM players")
         result = c.fetchall()
@@ -132,35 +147,49 @@ class StateHandler(tornado.web.RequestHandler):
             action=action[0]
             if action[0] == "fire_up":
                 for i in range(y - 1, -1, -1):
-                    if mainMap[x][i] != '.' and mainMap[x][i] != '&uarr;' and mainMap[x][i] != '&darr;' and mainMap[x][i] != '&larr;' and mainMap[x][i] != '&rarr;':
+                    if mainMap[x][i] != '.' and mainMap[x][i] != '&uarr;' and mainMap[x][i] != '&darr;' and mainMap[x][i] != '&larr;' and mainMap[x][i] != '&rarr;' and mainMap[x][i] != '#' and mainMap[x][i] != '@':
                         mainMap[x][i]['hit']=1
+                        break
+                    elif mainMap[x][i] == '#' or mainMap[x][i] == '@':
                         break
                     else:
                         mainMap[x][i] = '&uarr;'
             if action[0] == "fire_down":
                 for i in range(y + 1, int(settings['height'])):
-                    if mainMap[x][i] != '.' and mainMap[x][i] != '&uarr;' and mainMap[x][i] != '&darr;' and mainMap[x][i] != '&larr;' and mainMap[x][i] != '&rarr;':
+                    if mainMap[x][i] != '.' and mainMap[x][i] != '&uarr;' and mainMap[x][i] != '&darr;' and mainMap[x][i] != '&larr;' and mainMap[x][i] != '&rarr;' and mainMap[x][i] != '#' and mainMap[x][i] != '@':
                         mainMap[x][i]['hit'] = 1
+                        break
+                    elif mainMap[x][i] == '#' or mainMap[x][i] == '@':
                         break
                     else:
                         mainMap[x][i] = '&darr;'
             if action[0] == "fire_left":
                 for i in range(x - 1, -1, -1):
-                    if mainMap[i][y] != '.' and mainMap[i][y] != '&uarr;' and mainMap[i][y] != '&darr;' and mainMap[i][y] != '&larr;' and mainMap[i][y] != '&rarr;':
+                    if mainMap[i][y] != '.' and mainMap[i][y] != '&uarr;' and mainMap[i][y] != '&darr;' and mainMap[i][y] != '&larr;' and mainMap[i][y] != '&rarr;' and mainMap[i][y] != '#' and mainMap[i][y] != '@':
                         mainMap[i][y]['hit'] = 1
+                        break
+                    elif mainMap[i][y] == '#' or mainMap[i][y] == '@':
                         break
                     else:
                         mainMap[i][y] = '&larr;'
             if action[0] == "fire_right":
                 for i in range(x + 1, int(settings['width'])):
-                    if mainMap[i][y] != '.' and mainMap[i][y] != '&uarr;' and mainMap[i][y] != '&darr;' and mainMap[i][y] != '&larr;' and mainMap[i][y] != '&rarr;':
+                    if mainMap[i][y] != '.' and mainMap[i][y] != '&uarr;' and mainMap[i][y] != '&darr;' and mainMap[i][y] != '&larr;' and mainMap[i][y] != '&rarr;' and mainMap[i][y] != '#' and mainMap[i][y] != '@':
                         mainMap[i][y]['hit'] = 1
+                        break
+                    elif mainMap[i][y] == '#' or mainMap[i][y] == '@':
                         break
                     else:
                         mainMap[i][y] = '&rarr;'
         for record in result:
             if record[4]<=0:
                 c.execute("DELETE FROM game WHERE id = ?", [record[0]])
+        c.execute("SELECT * FROM coins")
+        result = c.fetchall()
+        for record in result:
+            x = record[0]
+            y = record[1]
+            mainMap[x][y]='@'
         conn.commit()
         self.write(json.dumps(mainMap))
 
