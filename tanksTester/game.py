@@ -128,8 +128,21 @@ def make_testing():
 
         historyMap = [[0 for i in range(int(settings["height"]))] for j in range(int(settings["width"]))]
 
+        if random.randint(1,5)==1:
+            x = random.randint(0, int(settings["width"]) - 1)
+            y = random.randint(0, int(settings["height"]) - 1)
+            cc = 0
+            while mainMap[x][y] != '.' and cc<10:
+                x = random.randint(0, int(settings["width"]) - 1)
+                y = random.randint(0, int(settings["height"]) - 1)
+                cc+=1
+            mainMap[x][y] = '@'
+            healthMap[x][y] = 1
+            c.execute("INSERT INTO coins (x,y) VALUES (?,?)", [x, y])
+        conn.commit()
+
         for player in players:
-            historyMap[coords[player]["x"]][coords[player]["y"]] = {"life": health[player], "history": history[player]}
+            historyMap[coords[player]["x"]][coords[player]["y"]] = {"life": health[player], "history": history[player], "name": names[player]}
 
         for i in range(len(mainMap)):
             for j in range(len(mainMap[0])):
@@ -153,7 +166,7 @@ def make_testing():
                 module = __import__(player, fromlist=["make_choice"])
                 module = imp.reload(module)
                 makeChoice = getattr(module, "make_choice")
-                print("Now running:" +player+" ("+names[player]+")")
+                #print("Now running:" +player+" ("+names[player]+")")
                 if len(historyMap)==1:
                     choices[player] = makeChoice(int(coords[player]["x"]), int(coords[player]["y"]), historyMap); #тут выбор
                 else:
@@ -259,9 +272,11 @@ def make_testing():
 
                         kills[player]+=1
 
+                        '''
                         print(player + " (" + str(health[player]) + ") hits " + str(hit_player) + " (" + str(
                             health[hit_player]) + ")" + " [" + str(px) + " ," + str(py) + "] -> [" + str(px) + ", " + str(
                             y) + "] " + choices[player])
+                            '''
 
 
 
@@ -361,7 +376,7 @@ def make_testing():
 
         remove_list = []
         for hit_player in players:
-            print(hit_player+" "+str(health[hit_player])+" - check")
+            #print(hit_player+" "+str(health[hit_player])+" - check")
             if health[hit_player] <= 0:
                 mainMap[coords[hit_player]['x']][coords[hit_player]['y']] = '.'
                 healthMap[coords[hit_player]['x']][coords[hit_player]['y']] = 0
