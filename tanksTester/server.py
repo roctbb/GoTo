@@ -5,8 +5,12 @@ import sqlite3
 import sys
 import os
 import json
+import random
+import string
 
 from time import gmtime, strftime
+def getKey(N):
+    return ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(N))
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
@@ -46,6 +50,22 @@ class MainHandler(tornado.web.RequestHandler):
             self.write("<script>alert('Ошибка загрузки!');location.href=location.href;</script>")
 
         sys.path.append(os.path.dirname(__file__) + "/bots")
+
+class RegisterHandler(tornado.web.RequestHandler):
+    def get(self):
+        self.render("register.html")
+    def post(self):
+        name = self.get_argument('key', None)
+        if name is None:
+            self.redirect('/register')
+        else:
+            conn = sqlite3.connect('tanks.sqlite')
+            c = conn.cursor()
+            key = getKey(8)
+            c.execute("INSERT INTO players (name, key, state, code) VALUES (?,?,?,?)", [name, key, "waiting", None])
+            conn.commit()
+            self.write("<string>Ваш ключ: </strong> {}".format(key))
+
 
 class StatsHandler(tornado.web.RequestHandler):
     def get(self):
@@ -195,7 +215,7 @@ class StateHandler(tornado.web.RequestHandler):
 
 class Application(tornado.web.Application):
     def __init__(self):
-        handlers = [(r"/", MainHandler),(r"/game", GameHandler),(r"/state", StateHandler), (r"/stats", StatsHandler),(r'/static/(.*)', tornado.web.StaticFileHandler, {'path': os.path.dirname(__file__)+"/static/"}),]
+        handlers = [(r"/", MainHandler),(r"/register", RegisterHandler),(r"/game", GameHandler),(r"/state", StateHandler), (r"/stats", StatsHandler),(r'/static/(.*)', tornado.web.StaticFileHandler, {'path': os.path.dirname(__file__)+"/static/"}),]
         settings = {}
         super(Application, self).__init__(handlers, **settings)
 

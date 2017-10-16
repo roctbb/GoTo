@@ -16,3 +16,12 @@ for name in names:
 
 conn.commit();
 
+'''
+Crimson   4  3    4 4   15
+Son       3  1  2   1  7    - II
+Lizzy     2     1     3
+Korol'    1       1   2
+Saraj        2    2   4     - III
+Kolobok      4  4   2  10
+nik             3 3 3  9    - I
+'''
