@@ -19,7 +19,7 @@ class MainHandler(tornado.web.RequestHandler):
     def post(self):
         try:
             file = self.request.files['file'][0]
-            conn = sqlite3.connect(DB_PATH)
+            conn = sqlite3.connect('tanks.sqlite')
             c = conn.cursor()
             c.execute("SELECT * FROM players WHERE key = '%s'"%self.get_argument("key"))
             player = c.fetchone()
@@ -60,7 +60,7 @@ class RegisterHandler(tornado.web.RequestHandler):
         if name is None:
             self.redirect('/register')
         else:
-            conn = sqlite3.connect(DB_PATH)
+            conn = sqlite3.connect('tanks.sqlite')
             c = conn.cursor()
             key = getKey(8)
             c.execute("INSERT INTO players (name, key, state, code) VALUES (?,?,?,?)", [name, key, "waiting", None])
@@ -70,7 +70,7 @@ class RegisterHandler(tornado.web.RequestHandler):
 
 class StatsHandler(tornado.web.RequestHandler):
     def get(self):
-        conn = sqlite3.connect(DB_PATH)
+        conn = sqlite3.connect('tanks.sqlite')
         gamestate=[]
         c = conn.cursor()
         c.execute("SELECT * FROM players")
@@ -110,7 +110,7 @@ class StatsHandler(tornado.web.RequestHandler):
         self.render("stats.html", gamestate = sorted(gamestate, key=lambda k: -k['score']))
 class GameHandler(tornado.web.RequestHandler):
     def get(self):
-        conn = sqlite3.connect(DB_PATH)
+        conn = sqlite3.connect('tanks.sqlite')
         c = conn.cursor()
         c.execute("SELECT * FROM settings")
         result = c.fetchall()
@@ -128,7 +128,7 @@ class GameHandler(tornado.web.RequestHandler):
 
 class StateHandler(tornado.web.RequestHandler):
     def get(self):
-        conn = sqlite3.connect(DB_PATH)
+        conn = sqlite3.connect('tanks.sqlite')
         c = conn.cursor()
         c.execute("SELECT * FROM settings")
         result = c.fetchall()
