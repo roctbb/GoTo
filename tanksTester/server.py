@@ -8,8 +8,7 @@ import json
 import random
 import string
 
-DB_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)),'tanks.sqlite')
-
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 from time import gmtime, strftime
 def getKey(N):
     return ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(N))

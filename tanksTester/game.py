@@ -4,7 +4,7 @@ import time
 import sys
 import os
 import importlib as imp
-
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 def make_testing():
     #работа с m файлами
     folder = './bots'
