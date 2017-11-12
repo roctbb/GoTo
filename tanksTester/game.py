@@ -4,7 +4,18 @@ import time
 import sys
 import os
 import importlib as imp
+from queue import Queue
+from threading import Thread
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
+
+def wrapper(func, x, y, field, queue):
+    try:
+        result = func(x,y,field)
+        queue.put(result)
+    except Exception as e:
+        queue.put("crash")
+        queue.put(e)
+
 def make_testing():
     #работа с m файлами
     folder = './bots'
@@ -157,25 +168,36 @@ def make_testing():
 
             if player in banlist:
                 continue
-            try:
-                c.execute("SELECT code FROM players WHERE key = ?", [player])
-                code = c.fetchone()
-                output_file = open("./bots/" + player + ".py", 'wb')
-                output_file.write(code[0])
-                output_file.close()
-                module = __import__(player, fromlist=["make_choice"])
-                module = imp.reload(module)
-                makeChoice = getattr(module, "make_choice")
-                #print("Now running:" +player+" ("+names[player]+")")
-                if len(historyMap)==1:
-                    choices[player] = makeChoice(int(coords[player]["x"]), int(coords[player]["y"]), historyMap); #тут выбор
-                else:
-                    choices[player] = makeChoice(int(coords[player]["x"]), int(coords[player]["y"]), historyMap);  # тут выбор
 
-            except Exception as e:
+            c.execute("SELECT code FROM players WHERE key = ?", [player])
+            code = c.fetchone()
+            output_file = open("./bots/" + player + ".py", 'wb')
+            output_file.write(code[0])
+            output_file.close()
+            module = __import__(player, fromlist=["make_choice"])
+            module = imp.reload(module)
+            makeChoice = getattr(module, "make_choice")
+            #print("Now running:" +player+" ("+names[player]+")")
+
+
+            queue = Queue()
+            thread = Thread(
+                target=wrapper,
+                name="game_choice",
+                args=[makeChoice, int(coords[player]["x"]), int(coords[player]["y"]), historyMap, queue],
+            )
+            thread.start()
+            thread.join(timeout=1)
+            if queue.empty():
+                choices[player] = "crash"
+                queue.put("timeout")
+            else:
+                choices[player] = queue.get()
+
+            if choices[player] == "crash":
+                e = queue.get()
                 print(player+" ("+names[player]+") has crashed :( :"+str(e))
                 history[player].append("crash")
-                choices[player] = "crash"
                 crashes[player]+=1
                 c.execute("INSERT INTO actions (key, value) VALUES (?, ?)", [player, choices[player]])
                 c.execute(
