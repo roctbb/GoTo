@@ -174,25 +174,31 @@ def make_testing():
             output_file = open("./bots/" + player + ".py", 'wb')
             output_file.write(code[0])
             output_file.close()
-            module = __import__(player, fromlist=["make_choice"])
-            module = imp.reload(module)
-            makeChoice = getattr(module, "make_choice")
-            #print("Now running:" +player+" ("+names[player]+")")
-
-
             queue = Queue()
-            thread = Thread(
-                target=wrapper,
-                name="game_choice",
-                args=[makeChoice, int(coords[player]["x"]), int(coords[player]["y"]), historyMap, queue],
-            )
-            thread.start()
-            thread.join(timeout=1)
-            if queue.empty():
+            try:
+                module = __import__(player, fromlist=["make_choice"])
+                module = imp.reload(module)
+                makeChoice = getattr(module, "make_choice")
+                #print("Now running:" +player+" ("+names[player]+")")
+
+
+
+                thread = Thread(
+                    target=wrapper,
+                    name="game_choice",
+                    args=[makeChoice, int(coords[player]["x"]), int(coords[player]["y"]), historyMap, queue],
+                )
+                thread.start()
+                thread.join(timeout=1)
+                if queue.empty():
+                    choices[player] = "crash"
+                    queue.put("timeout")
+                else:
+                    choices[player] = queue.get()
+
+            except Exception as e:
                 choices[player] = "crash"
-                queue.put("timeout")
-            else:
-                choices[player] = queue.get()
+                queue.put(e)
 
             if choices[player] == "crash":
                 e = queue.get()
