@@ -189,7 +189,7 @@ def make_testing():
                     args=[makeChoice, int(coords[player]["x"]), int(coords[player]["y"]), historyMap, queue],
                 )
                 thread.start()
-                thread.join(timeout=1)
+                thread.join(timeout=0.5)
                 if queue.empty():
                     choices[player] = "crash"
                     queue.put("timeout")

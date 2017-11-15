@@ -13,7 +13,7 @@ window.addEventListener('load', function(){
     canvas.height = height;
     ctx = canvas.getContext('2d');
 
-    fetchIntervalId = setInterval(fetchState, 600);
+    fetchIntervalId = setTimeout(fetchState, 600);
     // setInterval(redraw, 2000, field);
 });
 
@@ -92,6 +92,7 @@ function fetchState() {
         if (xhr.status === 200) {
             var map = JSON.parse(xhr.responseText);
             redraw(map);
+            fetchIntervalId = setTimeout(fetchState, 900);
         }
     }
 }
