@@ -4,8 +4,7 @@ import time
 import sys
 import os
 import importlib as imp
-from queue import Queue
-from threading import Thread
+from multiprocessing import Process, Queue
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 def wrapper(func, x, y, field, queue):
@@ -179,22 +178,21 @@ def make_testing():
                 module = __import__(player, fromlist=["make_choice"])
                 module = imp.reload(module)
                 makeChoice = getattr(module, "make_choice")
-                #print("Now running:" +player+" ("+names[player]+")")
+                print("Now running:" +player+" ("+names[player]+")")
 
-
-
-                thread = Thread(
+                thread = Process(
                     target=wrapper,
                     name="game_choice",
                     args=[makeChoice, int(coords[player]["x"]), int(coords[player]["y"]), historyMap, queue],
                 )
                 thread.start()
-                thread.join(timeout=0.5)
+                thread.join(timeout=0.3)
                 if queue.empty():
                     choices[player] = "crash"
                     queue.put("timeout")
                 else:
                     choices[player] = queue.get()
+
 
             except Exception as e:
                 choices[player] = "crash"
@@ -413,12 +411,9 @@ def make_testing():
                 print(hit_player + " is dead!")
                 remove_list.append(hit_player)
         for p in remove_list:
-            print(p + " - try to remove")
-            print(players)
             players.remove(p)
-            print(players)
         conn.commit()
-        time.sleep(1.2)
+        time.sleep(0.8)
 
     c.execute("UPDATE settings SET value = ? WHERE param = ?", ["stop", "game_state"])
 
