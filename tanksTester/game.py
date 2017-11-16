@@ -162,7 +162,7 @@ def make_testing():
                 if mainMap[i][j] == '@':
                     historyMap[i][j] = 1
 
-
+        timeout_flag = False
         for player in players:
             choices[player] = ""
 
@@ -201,6 +201,7 @@ def make_testing():
                 if 'choice' not in return_dict:
                     choices[player] = "crash"
                     lerror = "timeout"
+                    timeout_flag = True
                 elif 'error' in return_dict:
                     choices[player] = "crash"
                     lerror = return_dict['error']
@@ -425,7 +426,8 @@ def make_testing():
         for p in remove_list:
             players.remove(p)
         conn.commit()
-        time.sleep(0.5)
+        if not timeout_flag:
+            time.sleep(0.5)
 
     c.execute("UPDATE settings SET value = ? WHERE param = ?", ["stop", "game_state"])
 
