@@ -4,16 +4,17 @@ import time
 import sys
 import os
 import importlib as imp
-from multiprocessing import Process, Queue
+from multiprocessing import Process, Queue, Manager
+
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
-def wrapper(func, x, y, field, queue):
+def wrapper(func, x, y, field, rv):
     try:
         result = func(x,y,field)
-        queue.put(result)
+        rv['choice']= result
     except Exception as e:
-        queue.put("crash")
-        queue.put(e)
+        rv['choice'] = "crash"
+        rv['error'] = str(e)
 
 def make_testing():
     #работа с m файлами
@@ -173,34 +174,45 @@ def make_testing():
             output_file = open("./bots/" + player + ".py", 'wb')
             output_file.write(code[0])
             output_file.close()
-            queue = Queue()
+
+            lerror = ""
+
             try:
                 module = __import__(player, fromlist=["make_choice"])
                 module = imp.reload(module)
                 makeChoice = getattr(module, "make_choice")
                 print("Now running:" +player+" ("+names[player]+")")
 
+                manager = Manager()
+                return_dict = manager.dict()
+
                 thread = Process(
                     target=wrapper,
                     name="game_choice",
-                    args=[makeChoice, int(coords[player]["x"]), int(coords[player]["y"]), historyMap, queue],
+                    args=[makeChoice, int(coords[player]["x"]), int(coords[player]["y"]), historyMap, return_dict],
                 )
                 thread.start()
-                thread.join(timeout=0.3)
-                if queue.empty():
-                    choices[player] = "crash"
-                    queue.put("timeout")
-                else:
-                    choices[player] = queue.get()
+                thread.join(timeout=0.4)
+                thread.terminate()
 
+
+
+
+                if 'choice' not in return_dict:
+                    choices[player] = "crash"
+                    lerror = "timeout"
+                elif 'error' in return_dict:
+                    choices[player] = "crash"
+                    lerror = return_dict['error']
+                else:
+                    choices[player] = return_dict['choice']
 
             except Exception as e:
                 choices[player] = "crash"
-                queue.put(e)
+                lerror = str(e)
 
             if choices[player] == "crash":
-                e = queue.get()
-                print(player+" ("+names[player]+") has crashed :( :"+str(e))
+                print(player+" ("+names[player]+") has crashed :( :"+lerror)
                 history[player].append("crash")
                 crashes[player]+=1
                 c.execute("INSERT INTO actions (key, value) VALUES (?, ?)", [player, choices[player]])
@@ -209,7 +221,7 @@ def make_testing():
                     [player])
                 c.execute(
                     "UPDATE statistics SET lastCrash = ? WHERE key = ?",
-                    [str(e), player])
+                    [lerror, player])
         conn.commit()
 
         #print(historyMap)
@@ -413,7 +425,7 @@ def make_testing():
         for p in remove_list:
             players.remove(p)
         conn.commit()
-        time.sleep(0.8)
+        time.sleep(0.5)
 
     c.execute("UPDATE settings SET value = ? WHERE param = ?", ["stop", "game_state"])
 
