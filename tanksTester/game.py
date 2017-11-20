@@ -171,8 +171,9 @@ def make_testing():
 
             c.execute("SELECT code FROM players WHERE key = ?", [player])
             code = c.fetchone()
-            output_file = open("./bots/" + player + ".py", 'wb')
-            output_file.write(code[0])
+            code = code[0].decode('utf8').replace('exit()', '')
+            output_file = open("./bots/" + player + ".py", 'w')
+            output_file.write(code)
             output_file.close()
 
             lerror = ""
